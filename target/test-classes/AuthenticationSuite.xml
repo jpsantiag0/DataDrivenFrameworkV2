@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="AuthenticationSuite" parallel="none">
+	
+	<listeners>
+		<listener class-name="listener.TestNGListener"></listener>
+	</listeners>
+	
+	
+
+	<test name="Register new User and Delete it" preserve-order="true">
+		<classes>
+			<class name="testCases.NavigationTests">
+				<methods>
+					<include name="testLaunchBrowserAndNavigateToURL"></include>
+					<include name="testHomePageVisibility"></include>
+				</methods>
+			</class>
+			<class name="testCases.AuthenticationTests">
+				<methods>
+					<include name="testRegisterUser"></include>
+				</methods>
+			</class>
+			<class name="testCases.AuthenticationTests">
+				<methods>
+					<include name="testRemoveUser"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> <!--
+	Test -->
+	<test name="Register Existing User" preserve-order="true">
+		<classes>
+			<class name="testCases.NavigationTests">
+				<methods>
+					<include name="testLaunchBrowserAndNavigateToURL"></include>
+					<include name="testHomePageVisibility"></include>
+				</methods>
+			</class>
+			<class name="testCases.AuthenticationTests">
+				<methods>
+					<include name="testRegisterExistingUser"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Login with valid credentials and Logout" preserve-order="true">
+		<parameter name="userType" value="valid"></parameter>
+		<classes>
+			<class name="testCases.NavigationTests">
+				<methods>
+					<include name="testLaunchBrowserAndNavigateToURL"></include>
+					<include name="testHomePageVisibility"></include>
+				</methods>
+			</class>
+			<class name="testCases.AuthenticationTests">
+				<methods>
+					<include name="testLogin"></include>
+				</methods>
+			</class>
+			<class name="testCases.AuthenticationTests">
+				<methods>
+					<include name="testLogout"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Login with invalid credentials" preserve-order="true">
+		<parameter name="userType" value="invalid"></parameter>
+		<classes>
+			<class name="testCases.NavigationTests">
+				<methods>
+					<include name="testLaunchBrowserAndNavigateToURL"></include>
+					<include name="testHomePageVisibility"></include>
+				</methods>
+			</class>
+			<class name="testCases.AuthenticationTests">
+				<methods>
+					<include name="testLogin"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite> <!--
+Suite -->

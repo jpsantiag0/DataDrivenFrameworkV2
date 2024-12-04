@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="CartSuite" parallel="none">
+
+	<listeners>
+		<listener class-name="listener.TestNGListener"></listener>
+	</listeners>
+	
+	<test name="Add Products To Cart" preserve-order="true">
+		<classes>
+			<class name="testCases.NavigationTests">
+				<methods>
+					<include name="testLaunchBrowserAndNavigateToURL"></include>
+					<include name="testHomePageVisibility"></include>
+				</methods>
+			</class>
+			<class name="testCases.CartTests">
+				<methods>
+					<include name="testAddProductsToCart"></include>
+					<include name="testViewCartContents"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> <!--
+	Test -->
+	
+</suite> <!--
+Suite -->

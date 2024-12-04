@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	
+	<listeners>
+		<listener class-name="listener.TestNGListener"></listener>
+	</listeners>
+
+	<test name="Register User Test">
+		<classes>
+			<class name="testCasesEcommerce.ManageUserTest">
+				<methods>
+					<include name="registerUser"></include>
+				</methods>
+			</class>
+			<class name="testCasesEcommerce.ManageSessionTest">
+				<methods>
+					<include name="doLogout"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> <!--
+	Test -->
+	<test name="Delete User Test">
+		<classes>
+			<class name="testCasesEcommerce.ManageSessionTest">
+				<methods>
+					<include name="doLogin"></include>
+				</methods>
+			</class>
+			<class name="testCasesEcommerce.ManageUserTest">
+				<methods>
+					<include name="deleteUser"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite> <!--
+Suite -->

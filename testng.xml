@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="testCasesEcommerce.ManageUserTest">
+				<methods>
+					<include name="registerUser"></include>
+					<include name="deleteUser"></include>
+				</methods>
+			</class>
+			<class name="testCasesEcommerce.ManageSessionTest">
+				<methods>
+					<include name="doLogin"></include>
+					<include name="doLogout"></include>
+				</methods>
+			</class>
+			<class name="testCasesEcommerce.ManageProductTest">
+
+				<methods>
+					<include name="searchProduct"></include>
+					<include name="viewProduct"></include>
+				</methods>
+			</class>
+			<class name="testCasesEcommerce.ManageCartTest">
+
+				<methods>
+					<include name="addProductToCart"></include>
+					<include name="removeProductFromCart"></include>
+				</methods>
+			</class>
+
+
+		</classes>
+	</test> <!--
+	Test -->
+</suite> <!--
+Suite -->
